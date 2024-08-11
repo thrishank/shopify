@@ -9,14 +9,15 @@ interface DecisionReason {
 interface SimulateResponse {
   jsonrpc: string;
   result: {
-    transaction:{
-    decisionReasons: DecisionReason[];
+    transaction: {
+      decisionReasons: DecisionReason[];
     };
   };
   id: number;
 }
 
-export async function simulateTransaction(address: string): Promise<string | undefined> {;
+export async function simulateTransaction(address: string): Promise<string | undefined> {
+  ;
   const url = `https://rpc.shield3.com/v3/0x2105/${process.env.NEXT_PUBLIC_SHIELD_API}/rpc`;
   const data = {
     jsonrpc: '2.0',
@@ -35,7 +36,7 @@ export async function simulateTransaction(address: string): Promise<string | und
 
 
     if (result && result.decisionReasons) {
-      const decisionReasons = result.decisionReasons.slice(1); 
+      const decisionReasons = result.decisionReasons.slice(1);
 
       // Check if every decision reason is "Allow"
       const allAllowed = decisionReasons.every(reason => reason.decision === 'Allow');

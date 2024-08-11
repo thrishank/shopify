@@ -48,8 +48,9 @@ let i = 0;
 app.frame("/next/:id", async (c) => {
   try {
     const id = c.req.param("id");
-    const { shopifyToken, publicUrl, walletAddress } =
-      await fetchKeyDetails(id);
+    const { shopifyToken, publicUrl, walletAddress } = await fetchKeyDetails(
+      id
+    );
     const products = await fetchProductsShopify(shopifyToken, publicUrl);
     const firstProduct = products[i];
     i++;
@@ -147,8 +148,9 @@ app.frame("/next2/:id", async (c) => {
   try {
     i = i + 1;
     const id = c.req.param("id");
-    const { shopifyToken, publicUrl, walletAddress } =
-      await fetchKeyDetails(id);
+    const { shopifyToken, publicUrl, walletAddress } = await fetchKeyDetails(
+      id
+    );
     const products = await fetchProductsShopify(shopifyToken, publicUrl);
     const firstProduct = products[i];
 
@@ -319,8 +321,9 @@ app.frame("/V/:i/:id", async (c) => {
     const id = c.req.param("i");
     const id2 = c.req.param("id");
 
-    const { shopifyToken, publicUrl, walletAddress } =
-      await fetchKeyDetails(id2);
+    const { shopifyToken, publicUrl, walletAddress } = await fetchKeyDetails(
+      id2
+    );
     const products = await fetchProductsShopify(shopifyToken, publicUrl);
     let variantsLen = products[id].variants.length;
 
@@ -618,8 +621,9 @@ app.frame("/confirm/:id/:title/:price", async (c) => {
     const { inputText = "", previousButtonValues } = c;
     const splitInput = inputText.split(":");
 
-    const { shopifyToken, publicUrl, walletAddress } =
-      await fetchKeyDetails(id);
+    const { shopifyToken, publicUrl, walletAddress } = await fetchKeyDetails(
+      id
+    );
     const [
       emailAddress,
       first_name,

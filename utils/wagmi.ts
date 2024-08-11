@@ -3,12 +3,12 @@ import { base } from "wagmi/chains";
 import { coinbaseWallet } from "wagmi/connectors";
 import { createWalletClient, custom } from 'viem'
 export const config = createConfig({
-  chains:[base],
+  chains: [base],
   multiInjectedProviderDiscovery: false,
   connectors: [
     coinbaseWallet({
       appName: "SHOPIFY BASED",
-      preference:"smartWalletOnly"
+      preference: "smartWalletOnly"
     }),
   ],
   ssr: true,
@@ -20,7 +20,7 @@ export const config = createConfig({
 
 export const walletClient = createWalletClient({
   chain: base,
-  transport:http()
+  transport: http()
 })
 
 
