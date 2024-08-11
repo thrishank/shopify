@@ -93,7 +93,10 @@ const Hero = () => {
                   onClick={handleCopyAddress}
                   className="px-5 py-3 bg-blue-500 hover:bg-violet-800 text-white font-bold rounded-lg shadow-md flex items-center gap-2 transition duration-300 ease-in-out"
                 >
-                  <span>{`${address.slice(0, 4)}...${address.slice(address.length - 4, address.length)}`}</span>
+                  <span>{`${address.slice(0, 4)}...${address.slice(
+                    address.length - 4,
+                    address.length
+                  )}`}</span>
                   <span className="text-[10px] hover:cursor-pointer">
                     {copied ? (
                       <img src="/tick.svg"></img>
